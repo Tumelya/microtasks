@@ -1,11 +1,19 @@
 import React from 'react';
 import './App.css';
-import {NewComponent} from "./NewComponent";
+import {CarType, NewComponent} from "./NewComponent";
 
 function App() {
+
+    const topCars: Array<CarType> = [
+        {id: 1, manufacturer:'BMW', model:'m5cs'},
+        {id: 2, manufacturer:'Mercedes', model:'e63s'},
+        {id: 3, manufacturer:'Audi', model:'rs6'}
+    ]
+
+
     return (
         <div>
-           <NewComponent title={"Hi, Hello!"}/>
+           <NewComponent car={topCars}/>
         </div>
     );
 }
