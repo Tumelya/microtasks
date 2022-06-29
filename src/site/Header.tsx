@@ -5,7 +5,7 @@ type HeaderType = {
 export const Header = (props: HeaderType) => {
     return (
         <>
-            <h2>{props.titleForHeader}</h2>
+            <h3>{props.titleForHeader}</h3>
         </>
     )
 }
