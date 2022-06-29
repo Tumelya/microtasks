@@ -1,7 +1,11 @@
-export const Body = () => {
+type BodyType = {
+    titleForBody: string
+}
+
+export const Body = (props: BodyType) => {
     return (
         <>
-            <h3>Body</h3>
+            <h3>{props.titleForBody}</h3>
         </>
     )
 }

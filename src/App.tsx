@@ -8,9 +8,9 @@ import {Footer} from "./site/Footer";
 function App() {
     return (
         <div>
-            <Header/>
-            <Body/>
-            <Footer/>
+            <Header titleForHeader={"This is the Header"}/>
+            <Body titleForBody={"This is the Body"}/>
+            <Footer titleForFooter={"This is the Footer"}/>
         </div>
     );
 }
