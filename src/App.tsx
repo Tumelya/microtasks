@@ -21,8 +21,12 @@ function App() {
             <Header titleForHeader={"This is the Header"}/>
             <Body titleForBody={"This is the Body"}/>
             <Footer titleForFooter={"This is the Footer"}/>
+
             <h1>Microtask 02</h1>
             <NewComponent car={topCars}/>
+
+            <h1>Microtask 03</h1>
+            <button>Nice</button>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './NewComponent.css';
 
 type NewComponentType = {
     car: Array<CarType>
