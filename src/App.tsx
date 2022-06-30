@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 
 import {CarType, NewComponent} from "./NewComponent";
+import {Button} from "./components/Button";
 
 function App() {
 
@@ -13,14 +14,6 @@ function App() {
         {id: 2, manufacturer: 'Mercedes', model: 'e63s'},
         {id: 3, manufacturer: 'Audi', model: 'rs6'}
     ]
-
-    const first = () => {
-        console.log("Hi, I am Alex!");
-    }
-    const second = () => {
-        console.log("Hi, I am Maria!");
-    }
-
 
     return (
         <div>
@@ -33,9 +26,7 @@ function App() {
             <NewComponent car={topCars}/>
 
             <h1>Microtask 03</h1>
-            <button onClick={(event) => {console.log("Hi")}}>Nice</button>
-            <button onClick={first}>First</button>
-            <button onClick={second}>Second</button>
+            <Button></Button>
         </div>
     );
 }
