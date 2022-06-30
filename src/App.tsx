@@ -14,6 +14,13 @@ function App() {
         {id: 3, manufacturer: 'Audi', model: 'rs6'}
     ]
 
+    const first = () => {
+        console.log("Hi, I am Alex!");
+    }
+    const second = () => {
+        console.log("Hi, I am Maria!");
+    }
+
 
     return (
         <div>
@@ -26,7 +33,9 @@ function App() {
             <NewComponent car={topCars}/>
 
             <h1>Microtask 03</h1>
-            <button>Nice</button>
+            <button onClick={(event) => {console.log("Hi")}}>Nice</button>
+            <button onClick={first}>First</button>
+            <button onClick={second}>Second</button>
         </div>
     );
 }
