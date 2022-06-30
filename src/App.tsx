@@ -26,7 +26,9 @@ function App() {
             <NewComponent car={topCars}/>
 
             <h1>Microtask 03</h1>
-            <Button></Button>
+            <Button name={"first"}/>
+            <Button name={"second"}/>
+
         </div>
     );
 }
