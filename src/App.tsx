@@ -15,6 +15,16 @@ function App() {
         {id: 3, manufacturer: 'Audi', model: 'rs6'}
     ]
 
+    const Button1Foo = (tit: string, num: number) => {
+        console.log(tit, num);
+    }
+    const Button2Foo = (tit: string, num: number) => {
+        console.log(tit, num);
+    }
+    const Button3Foo = () => {
+        console.log("You click on third button!");
+    }
+
     return (
         <div>
             <h1>Microtask 01</h1>
@@ -26,9 +36,9 @@ function App() {
             <NewComponent car={topCars}/>
 
             <h1>Microtask 03</h1>
-            <Button name={"first"}/>
-            <Button name={"second"}/>
-
+            <Button name={"first"} callBack={() => Button1Foo("You click on first button!", 1)}/>
+            <Button name={"second"} callBack={() => Button2Foo("You click on second button!", 2)}/>
+            <Button name={"third"} callBack={Button3Foo}/>
         </div>
     );
 }

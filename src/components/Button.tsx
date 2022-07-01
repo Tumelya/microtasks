@@ -3,9 +3,16 @@ import React from "react";
 
 type buttType = {
     name: string
+    callBack:()=>void
 }
 
 export const Button = (props: buttType) => {
+
+    const onClickHandler = () => {
+        props.callBack();
+    }
+
+    //console.log(`You click on ${props.name} button`)
 
     /*
     const first = (event: MouseEvent<HTMLButtonElement>) => {
@@ -22,7 +29,7 @@ export const Button = (props: buttType) => {
 
     return (
         <>
-            <button onClick={() => {console.log(`You click on ${props.name} button`)}}>{props.name}</button>
+            <button onClick={onClickHandler}>{props.name}</button>
         </>
     )
 }
