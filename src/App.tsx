@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body";
@@ -25,20 +25,29 @@ function App() {
         console.log("You click on third button!");
     }
 
+    let [a, setA]=useState(1);
+    const onClickHandler = () => {
+        setA(++a);
+    }
+
     return (
         <div>
-            <h1>Microtask 01</h1>
+            <h1>Microtask 01 - components</h1>
             <Header titleForHeader={"This is the Header"}/>
             <Body titleForBody={"This is the Body"}/>
             <Footer titleForFooter={"This is the Footer"}/>
 
-            <h1>Microtask 02</h1>
+            <h1>Microtask 02 - map</h1>
             <NewComponent car={topCars}/>
 
-            <h1>Microtask 03</h1>
+            <h1>Microtask 03 - button</h1>
             <Button name={"first"} callBack={() => Button1Foo("You click on first button!", 1)}/>
             <Button name={"second"} callBack={() => Button2Foo("You click on second button!", 2)}/>
             <Button name={"third"} callBack={Button3Foo}/>
+
+            <h1>Microtask 04 - useState</h1>
+            <h2>{a}</h2>
+            <button onClick={onClickHandler}>number</button>
         </div>
     );
 }
