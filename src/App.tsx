@@ -25,7 +25,7 @@ function App() {
         console.log("You click on third button!");
     }
 
-    let [a, setA]=useState(1);
+    let [a, setA] = useState(1);
     const onClickHandler = () => {
         setA(++a);
     }
@@ -33,25 +33,83 @@ function App() {
         setA(0);
     }
 
+    const [money, setMoney] = useState([
+        {banknotes: 'Dollars', value: 100, number: ' a1234567890'},
+        {banknotes: 'Dollars', value: 50, number: ' z1234567890'},
+        {banknotes: 'Rubles', value: 100, number: ' w1234567890'},
+        {banknotes: 'Dollars', value: 100, number: ' e1234567890'},
+        {banknotes: 'Dollars', value: 50, number: ' c1234567890'},
+        {banknotes: 'Rubles', value: 100, number: ' r1234567890'},
+        {banknotes: 'Dollars', value: 50, number: ' x1234567890'},
+        {banknotes: 'Rubles', value: 50, number: ' v1234567890'},
+    ])
+
+
+    type FilterType = "All"|"Dollar"|"Ruble"
+    const [filter, setFilter] = useState<FilterType>("All")
+    let currentMoney = money;
+    if (filter === "Dollar") {
+        currentMoney = money.filter((filteredMoney) => filteredMoney.banknotes === "Dollars");
+    }
+    if (filter === "Ruble") {
+        currentMoney = money.filter((filteredMoney) => filteredMoney.banknotes === "Rubles");
+    }
+
+    const onClickFilterMoney = (buttonBanknote: FilterType) => {
+        console.log(buttonBanknote);
+        setFilter(buttonBanknote);
+    }
+
     return (
         <div>
+            ////////////////////////////////////////////////////////////
             <h1>Microtask 01 - components</h1>
+
             <Header titleForHeader={"This is the Header"}/>
             <Body titleForBody={"This is the Body"}/>
             <Footer titleForFooter={"This is the Footer"}/>
 
-            <h1>Microtask 02 - map</h1>
+            ////////////////////////////////////////////////////////////
+            <h1>Microtask 02 - map()</h1>
+
             <NewComponent car={topCars}/>
 
+            ////////////////////////////////////////////////////////////
             <h1>Microtask 03 - button</h1>
-            <Button name={"first"} callBack={() => Button1Foo("You click on first button!", 1)}/>
-            <Button name={"second"} callBack={() => Button2Foo("You click on second button!", 2)}/>
-            <Button name={"third"} callBack={Button3Foo}/>
 
+            <div style={{marginLeft: "35px"}}>
+                <Button name={"first"} callBack={() => Button1Foo("You click on first button!", 1)}/>
+                <Button name={"second"} callBack={() => Button2Foo("You click on second button!", 2)}/>
+                <Button name={"third"} callBack={Button3Foo}/>
+            </div>
+
+            ////////////////////////////////////////////////////////////
             <h1>Microtask 04 - useState</h1>
-            <h2>{a}</h2>
-            <button onClick={onClickHandler}>number</button>
-            <button onClick={onClickZero}>0</button>
+
+            <div style={{marginLeft: "35px"}}>
+                <h2>{a}</h2>
+                <button onClick={onClickHandler}>number</button>
+                <button onClick={onClickZero}>0</button>
+            </div>
+
+            ////////////////////////////////////////////////////////////
+            <h1>Microtask 05 - filter()</h1>
+            <ul>
+                {currentMoney.map((objFromMoneyArr, index) => {
+                    return (
+                        <li key={index}>
+                            <span>{objFromMoneyArr.banknotes}</span>
+                            <span>{objFromMoneyArr.value}</span>
+                            <span>{objFromMoneyArr.number}</span>
+                        </li>
+                    )
+                })}
+            </ul>
+            <div style={{marginLeft: "35px"}}>
+                <button onClick={() => onClickFilterMoney("Dollar")}>Dollar</button>
+                <button onClick={() => onClickFilterMoney("Ruble")}>Ruble</button>
+                <button onClick={() => onClickFilterMoney("All")}>All</button>
+            </div>
         </div>
     );
 }
