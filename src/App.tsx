@@ -29,6 +29,9 @@ function App() {
     const onClickHandler = () => {
         setA(++a);
     }
+    const onClickZero = () => {
+        setA(0);
+    }
 
     return (
         <div>
@@ -48,6 +51,7 @@ function App() {
             <h1>Microtask 04 - useState</h1>
             <h2>{a}</h2>
             <button onClick={onClickHandler}>number</button>
+            <button onClick={onClickZero}>0</button>
         </div>
     );
 }
