@@ -7,6 +7,7 @@ import {Footer} from "./site/Footer";
 import {CarType, NewComponent} from "./NewComponent";
 import {Button} from "./components/Button";
 import {FilterMoney, FilterType} from "./components/FilterMoney";
+import {FullInput} from "./components/FullInput";
 
 function App() {
 
@@ -62,8 +63,14 @@ function App() {
         setFilter(buttonBanknote);
     }
 
+    let [message, setMessage] = useState([
+        {message: "message1"},
+        {message: "message2"},
+        {message: "message3"}
+    ])
+
     return (
-        <div>
+        <div style={{marginLeft: "35px", marginBottom: "30px"}}>
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 01 - components</h1>
 
@@ -99,11 +106,23 @@ function App() {
 
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 05 - filter()</h1>
+
             <FilterMoney currentMoney={currentMoney}
                          onClickFilterMoney={onClickFilterMoney}/>
 
             {/*////////////////////////////////////////////////////////////*/}
+            <h1>Microtask 06 - input</h1>
 
+            <div style={{marginLeft: "35px"}}>
+                {/*<input/>
+                <button>+</button>*/}
+                <FullInput/>
+                {message.map((el, index) => {
+                    return (
+                        <div key={index}>{el.message}</div>
+                    )
+                })}
+            </div>
 
         </div>
     );
