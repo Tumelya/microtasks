@@ -6,6 +6,7 @@ import {Footer} from "./site/Footer";
 
 import {CarType, NewComponent} from "./NewComponent";
 import {Button} from "./components/Button";
+import {FilterMoney, FilterType} from "./components/FilterMoney";
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
     ])
 
 
-    type FilterType = "All"|"Dollar"|"Ruble"
+    // type FilterType = "All"|"Dollar"|"Ruble"
     const [filter, setFilter] = useState<FilterType>("All")
     let currentMoney = money;
     if (filter === "Dollar") {
@@ -94,7 +95,9 @@ function App() {
 
             ////////////////////////////////////////////////////////////
             <h1>Microtask 05 - filter()</h1>
-            <ul>
+            <FilterMoney currentMoney={currentMoney}
+                         onClickFilterMoney={onClickFilterMoney}/>
+            {/*<ul>
                 {currentMoney.map((objFromMoneyArr, index) => {
                     return (
                         <li key={index}>
@@ -109,7 +112,7 @@ function App() {
                 <button onClick={() => onClickFilterMoney("Dollar")}>Dollar</button>
                 <button onClick={() => onClickFilterMoney("Ruble")}>Ruble</button>
                 <button onClick={() => onClickFilterMoney("All")}>All</button>
-            </div>
+            </div>*/}
         </div>
     );
 }
