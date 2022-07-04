@@ -27,7 +27,10 @@ function App() {
     }
 
     let [a, setA] = useState(1);
-    const onClickHandler = () => {
+    const onClickMinus = () => {
+        setA(--a);
+    }
+    const onClickPlus = () => {
         setA(++a);
     }
     const onClickZero = () => {
@@ -89,14 +92,18 @@ function App() {
 
             <div style={{marginLeft: "35px"}}>
                 <h2>{a}</h2>
-                <button onClick={onClickHandler}>+</button>
+                <button onClick={onClickMinus}>-1</button>
                 <button onClick={onClickZero}>0</button>
+                <button onClick={onClickPlus}>+1</button>
             </div>
 
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 05 - filter()</h1>
             <FilterMoney currentMoney={currentMoney}
                          onClickFilterMoney={onClickFilterMoney}/>
+
+            {/*////////////////////////////////////////////////////////////*/}
+
 
         </div>
     );
