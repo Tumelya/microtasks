@@ -9,7 +9,6 @@ import {Button} from "./components/Button";
 import {FilterMoney, FilterType} from "./components/FilterMoney";
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
-import {ButtonSixTask} from "./components/ButtonSixTask";
 
 function App() {
 
@@ -121,14 +120,18 @@ function App() {
             <h1>Microtask 06 - input</h1>
 
             <div style={{marginLeft: "35px"}}>
+                <p><b>FullInput Component</b></p>
                 <FullInput addNewMessage={addNewMessage}/>
                 {message.map((el, index) => {
                     return (
                         <div key={index}>{el.message}</div>
                     )
                 })}
+            </div>
+            <div style={{marginLeft: "35px"}}>
+                <p><b>Input+Button Components</b></p>
                 <Input/>
-                <ButtonSixTask/>
+                <Button name={"+"} callBack={()=>{}}/>
             </div>
 
         </div>
