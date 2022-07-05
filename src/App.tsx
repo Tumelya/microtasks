@@ -8,6 +8,7 @@ import {CarType, NewComponent} from "./NewComponent";
 import {Button} from "./components/Button";
 import {FilterMoney, FilterType} from "./components/FilterMoney";
 import {FullInput} from "./components/FullInput";
+import {Input} from "./components/Input";
 
 function App() {
 
@@ -119,14 +120,13 @@ function App() {
             <h1>Microtask 06 - input</h1>
 
             <div style={{marginLeft: "35px"}}>
-                {/*<input/>
-                <button>+</button>*/}
                 <FullInput addNewMessage={addNewMessage}/>
                 {message.map((el, index) => {
                     return (
                         <div key={index}>{el.message}</div>
                     )
                 })}
+                <Input/>
             </div>
 
         </div>
