@@ -69,6 +69,11 @@ function App() {
         {message: "message3"}
     ])
 
+    const addNewMessage = (title: string) => {
+        let newMessage = {message: title};
+        setMessage([newMessage, ...message]);
+    }
+
     return (
         <div style={{marginLeft: "35px", marginBottom: "30px"}}>
             {/*////////////////////////////////////////////////////////////*/}
@@ -116,7 +121,7 @@ function App() {
             <div style={{marginLeft: "35px"}}>
                 {/*<input/>
                 <button>+</button>*/}
-                <FullInput/>
+                <FullInput addNewMessage={addNewMessage}/>
                 {message.map((el, index) => {
                     return (
                         <div key={index}>{el.message}</div>
