@@ -1,3 +1,4 @@
+//microtask 02 - map()
 import React from 'react';
 import './NewComponent.css';
 

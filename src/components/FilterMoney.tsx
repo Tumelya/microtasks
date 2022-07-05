@@ -1,3 +1,4 @@
+//microtask 05 - filter()
 import React, {useState} from "react";
 
 export type FilterType = "All" | "Dollar" | "Ruble"

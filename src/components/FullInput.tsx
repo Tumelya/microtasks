@@ -1,3 +1,4 @@
+//microtask 06 - input
 import React, {ChangeEvent, useState} from "react";
 
 type FullInputPropsType = {
