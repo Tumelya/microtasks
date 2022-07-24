@@ -1,10 +1,21 @@
 //microtask 06 - input
-import React, {useState} from "react";
+import React, {ChangeEvent} from "react";
 
-export const Input = () => {
+type InputPropsType = {
+    title: string
+    setTitle: (title: string) => void
+}
+
+export const Input = (props: InputPropsType) => {
+
+    const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        props.setTitle(event.currentTarget.value);
+    }
     return (
         <>
-            <input />
+            <input value={props.title}
+                   onChange={onChangeInputHandler}
+            />
         </>
     )
 }

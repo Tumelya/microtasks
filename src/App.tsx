@@ -75,6 +75,13 @@ function App() {
         setMessage([newMessage, ...message]);
     }
 
+    let [title, setTitle] = useState("");
+
+    const callBackButtonHandler = () => {
+        addNewMessage(title);
+        setTitle("");
+    }
+
     return (
         <div style={{marginLeft: "35px", marginBottom: "30px"}}>
             {/*////////////////////////////////////////////////////////////*/}
@@ -119,7 +126,7 @@ function App() {
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 06 - input</h1>
 
-            <div style={{marginLeft: "35px"}}>
+            {/*<div style={{marginLeft: "35px"}}>
                 <p><b>FullInput Component</b></p>
                 <FullInput addNewMessage={addNewMessage}/>
                 {message.map((el, index) => {
@@ -127,13 +134,18 @@ function App() {
                         <div key={index}>{el.message}</div>
                     )
                 })}
-            </div>
+            </div>*/}
+
             <div style={{marginLeft: "35px"}}>
                 <p><b>Input+Button Components</b></p>
-                <Input/>
-                <Button name={"+"} callBack={()=>{}}/>
+                <Input setTitle={setTitle} title={title}/>
+                <Button name={"+"} callBack={callBackButtonHandler}/>
+                {message.map((el, index) => {
+                    return (
+                        <div key={index}>{el.message}</div>
+                    )
+                })}
             </div>
-
         </div>
     );
 }
