@@ -9,6 +9,7 @@ import {Button} from "./components/Button";
 import {FilterMoney, FilterType} from "./components/FilterMoney";
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
+import {MicrotaskSeven} from "./MicrotaskSeven";
 
 function App() {
 
@@ -146,6 +147,10 @@ function App() {
                     )
                 })}
             </div>
+            {/*////////////////////////////////////////////////////////////*/}
+            <h1>Microtask 07</h1>
+
+            <MicrotaskSeven/>
         </div>
     );
 }
