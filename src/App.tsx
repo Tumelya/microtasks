@@ -9,7 +9,7 @@ import {Button} from "./components/Button";
 import {FilterMoney, FilterType} from "./components/FilterMoney";
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
-import {MicrotaskSeven} from "./MicrotaskSeven";
+import {MicrotaskSeven} from "./tasks/task7/MicrotaskSeven";
 
 function App() {
 
