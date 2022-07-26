@@ -55,13 +55,11 @@ export const MicrotaskSeven = () => {
         setTasks({...tasks, [todolistID]: [newTask, ...tasks[todolistID]]});
     }
 
-    function changeStatus(taskId: string, isDone: boolean) {
-        /*let task = tasks.find(t => t.id === taskId);
-        if (task) {
-            task.isDone = isDone;
-        }
-
-        setTasks([...tasks]);*/
+    function changeStatus(todolistID: string, taskId: string, isDone: boolean) {
+        setTasks({...tasks, [todolistID]: tasks[todolistID].map(t => t.id === taskId ? {...t, isDone} : t)});
+        /*let task = tasks[todolistID].find(t => t.id === taskId);
+        if (task) {task.isDone = isDone;}
+        setTasks({...tasks});*/
     }
 
     function changeFilter(todolistID: string, value: FilterValuesType) {
