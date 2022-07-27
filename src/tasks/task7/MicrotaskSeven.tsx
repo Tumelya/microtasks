@@ -67,26 +67,30 @@ export const MicrotaskSeven = () => {
     }
 
     return (
-        <div className="App">
-            {todolists.map(el => {
-                let tasksForTodolist = tasks[el.id];
-                if (el.filter === "active") {
-                    tasksForTodolist = tasks[el.id].filter(t => !t.isDone);
-                }
-                if (el.filter === "completed") {
-                    tasksForTodolist = tasks[el.id].filter(t => t.isDone);
-                }
-                return (
-                    <Todolist key={el.id}
-                              todolistID={el.id}
-                              title={el.title}
-                              tasks={tasksForTodolist}
-                              removeTask={removeTask}
-                              changeFilter={changeFilter}
-                              addTask={addTask}
-                              changeTaskStatus={changeStatus}
-                              filter={el.filter}/>)
-            })}
+        <div>
+            <h1>Microtask 07</h1>
+
+            <div className="App">
+                {todolists.map(el => {
+                    let tasksForTodolist = tasks[el.id];
+                    if (el.filter === "active") {
+                        tasksForTodolist = tasks[el.id].filter(t => !t.isDone);
+                    }
+                    if (el.filter === "completed") {
+                        tasksForTodolist = tasks[el.id].filter(t => t.isDone);
+                    }
+                    return (
+                        <Todolist key={el.id}
+                                  todolistID={el.id}
+                                  title={el.title}
+                                  tasks={tasksForTodolist}
+                                  removeTask={removeTask}
+                                  changeFilter={changeFilter}
+                                  addTask={addTask}
+                                  changeTaskStatus={changeStatus}
+                                  filter={el.filter}/>)
+                })}
+            </div>
         </div>
     );
 }
