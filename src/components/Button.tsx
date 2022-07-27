@@ -4,6 +4,7 @@ import React from "react";
 type buttType = {
     name: string
     callBack:()=>void
+    className?: string
 }
 
 export const Button = (props: buttType) => {
@@ -14,7 +15,7 @@ export const Button = (props: buttType) => {
 
     return (
         <>
-            <button onClick={onClickHandler}>{props.name}</button>
+            <button className={props.className} onClick={onClickHandler}>{props.name}</button>
         </>
     )
 }

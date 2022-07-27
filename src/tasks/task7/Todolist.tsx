@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './MicrotaskSeven';
+import {Button} from "../../components/Button";
 
 type TaskType = {
     id: string
@@ -78,12 +79,18 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button className={props.filter === 'all' ? "active-filter" : ""}
+            <Button className={props.filter === 'all' ? "active-filter" : ""}
+                    name="All" callBack={onAllClickHandler}/>
+            <Button className={props.filter === 'active' ? "active-filter" : ""}
+                    name="Active" callBack={onActiveClickHandler}/>
+            <Button className={props.filter === 'completed' ? "active-filter" : ""}
+                    name="Completed" callBack={onCompletedClickHandler}/>
+            {/*<button className={props.filter === 'all' ? "active-filter" : ""}
                     onClick={onAllClickHandler}>All</button>
             <button className={props.filter === 'active' ? "active-filter" : ""}
                 onClick={onActiveClickHandler}>Active</button>
             <button className={props.filter === 'completed' ? "active-filter" : ""}
-                onClick={onCompletedClickHandler}>Completed</button>
+                onClick={onCompletedClickHandler}>Completed</button>*/}
         </div>
     </div>
 }
