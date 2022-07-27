@@ -4,21 +4,16 @@ import {Header} from "./tasks/task1/site/Header";
 import {Body} from "./tasks/task1/site/Body";
 import {Footer} from "./tasks/task1/site/Footer";
 
-import {CarType, NewComponent} from "./NewComponent";
+import {CarType, NewComponent} from "./tasks/task2/NewComponent";
 import {Button} from "./components/Button";
 import {FilterMoney, FilterType} from "./components/FilterMoney";
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
 import {MicrotaskSeven} from "./tasks/task7/MicrotaskSeven";
 import {MicrotaskOne} from "./tasks/task1/MicrotaskOne";
+import {MicrotaskTwo} from "./tasks/task2/MicrotaskTwo";
 
 function App() {
-
-    const topCars: Array<CarType> = [
-        {id: 1, manufacturer: 'BMW', model: 'm5cs'},
-        {id: 2, manufacturer: 'Mercedes', model: 'e63s'},
-        {id: 3, manufacturer: 'Audi', model: 'rs6'}
-    ]
 
     const Button1Foo = (tit: string, num: number) => {
         console.log(tit, num);
@@ -88,12 +83,7 @@ function App() {
         <div style={{marginLeft: "30%", marginBottom: "30px"}}>
 
             <MicrotaskOne/>
-
-            {/*////////////////////////////////////////////////////////////*/}
-            <h1>Microtask 02 - map()</h1>
-
-            <NewComponent car={topCars}/>
-
+<MicrotaskTwo/>
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 03 - button</h1>
 
