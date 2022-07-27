@@ -84,7 +84,7 @@ function App() {
     }
 
     return (
-        <div style={{marginLeft: "35px", marginBottom: "30px"}}>
+        <div style={{marginLeft: "30%", marginBottom: "30px"}}>
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 01 - components</h1>
 
