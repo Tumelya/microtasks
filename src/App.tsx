@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import './App.css';
-import {Header} from "./site/Header";
-import {Body} from "./site/Body";
-import {Footer} from "./site/Footer";
+import {Header} from "./tasks/task1/site/Header";
+import {Body} from "./tasks/task1/site/Body";
+import {Footer} from "./tasks/task1/site/Footer";
 
 import {CarType, NewComponent} from "./NewComponent";
 import {Button} from "./components/Button";
@@ -10,6 +10,7 @@ import {FilterMoney, FilterType} from "./components/FilterMoney";
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
 import {MicrotaskSeven} from "./tasks/task7/MicrotaskSeven";
+import {MicrotaskOne} from "./tasks/task1/MicrotaskOne";
 
 function App() {
 
@@ -85,14 +86,8 @@ function App() {
 
     return (
         <div style={{marginLeft: "30%", marginBottom: "30px"}}>
-            {/*////////////////////////////////////////////////////////////*/}
-            <h1>Microtask 01 - components</h1>
 
-            <div style={{marginLeft: "35px"}}>
-                <Header titleForHeader={"This is the Header"}/>
-                <Body titleForBody={"This is the Body"}/>
-                <Footer titleForFooter={"This is the Footer"}/>
-            </div>
+            <MicrotaskOne/>
 
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 02 - map()</h1>
