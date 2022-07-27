@@ -6,7 +6,7 @@ import {Footer} from "./tasks/task1/site/Footer";
 
 import {CarType, NewComponent} from "./tasks/task2/NewComponent";
 import {Button} from "./components/Button";
-import {FilterMoney, FilterType} from "./components/FilterMoney";
+import {FilterMoney, FilterType} from "./tasks/task5/FilterMoney";
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
 import {MicrotaskSeven} from "./tasks/task7/MicrotaskSeven";
@@ -14,34 +14,9 @@ import {MicrotaskOne} from "./tasks/task1/MicrotaskOne";
 import {MicrotaskTwo} from "./tasks/task2/MicrotaskTwo";
 import {MicrotaskThree} from "./tasks/task3/MicrotaskThree";
 import {MicrotaskFour} from "./tasks/task4/MicrotaskFour";
+import {MicrotaskFive} from "./tasks/task5/MicrotaskFive";
 
 function App() {
-
-
-    const [money, setMoney] = useState([
-        {banknotes: 'Dollars', value: 100, number: ' a1234567890'},
-        {banknotes: 'Dollars', value: 50, number: ' z1234567890'},
-        {banknotes: 'Rubles', value: 100, number: ' w1234567890'},
-        {banknotes: 'Dollars', value: 100, number: ' e1234567890'},
-        {banknotes: 'Dollars', value: 50, number: ' c1234567890'},
-        {banknotes: 'Rubles', value: 100, number: ' r1234567890'},
-        {banknotes: 'Dollars', value: 50, number: ' x1234567890'},
-        {banknotes: 'Rubles', value: 50, number: ' v1234567890'},
-    ])
-
-    const [filter, setFilter] = useState<FilterType>("All")
-    let currentMoney = money;
-    if (filter === "Dollar") {
-        currentMoney = money.filter((filteredMoney) => filteredMoney.banknotes === "Dollars");
-    }
-    if (filter === "Ruble") {
-        currentMoney = money.filter((filteredMoney) => filteredMoney.banknotes === "Rubles");
-    }
-
-    const onClickFilterMoney = (buttonBanknote: FilterType) => {
-        console.log(buttonBanknote);
-        setFilter(buttonBanknote);
-    }
 
     let [message, setMessage] = useState([
         {message: "message1"},
@@ -68,12 +43,7 @@ function App() {
             <MicrotaskTwo/>
             <MicrotaskThree/>
             <MicrotaskFour/>
-           
-            <h1>Microtask 05 - filter()</h1>
-
-            <FilterMoney currentMoney={currentMoney}
-                         onClickFilterMoney={onClickFilterMoney}/>
-
+            <MicrotaskFive/>
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 06 - input</h1>
 
