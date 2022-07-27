@@ -12,18 +12,9 @@ import {Input} from "./components/Input";
 import {MicrotaskSeven} from "./tasks/task7/MicrotaskSeven";
 import {MicrotaskOne} from "./tasks/task1/MicrotaskOne";
 import {MicrotaskTwo} from "./tasks/task2/MicrotaskTwo";
+import {MicrotaskThree} from "./tasks/task3/MicrotaskThree";
 
 function App() {
-
-    const Button1Foo = (tit: string, num: number) => {
-        console.log(tit, num);
-    }
-    const Button2Foo = (tit: string, num: number) => {
-        console.log(tit, num);
-    }
-    const Button3Foo = () => {
-        console.log("You click on third button!");
-    }
 
     let [a, setA] = useState(1);
     const onClickMinus = () => {
@@ -83,15 +74,8 @@ function App() {
         <div style={{marginLeft: "30%", marginBottom: "30px"}}>
 
             <MicrotaskOne/>
-<MicrotaskTwo/>
-            {/*////////////////////////////////////////////////////////////*/}
-            <h1>Microtask 03 - button</h1>
-
-            <div style={{marginLeft: "35px"}}>
-                <Button name={"first"} callBack={() => Button1Foo("You click on first button!", 1)}/>
-                <Button name={"second"} callBack={() => Button2Foo("You click on second button!", 2)}/>
-                <Button name={"third"} callBack={Button3Foo}/>
-            </div>
+            <MicrotaskTwo/>
+            <MicrotaskThree/>
 
             {/*////////////////////////////////////////////////////////////*/}
             <h1>Microtask 04 - useState</h1>
